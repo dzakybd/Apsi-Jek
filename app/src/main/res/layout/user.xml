@@ -1,0 +1,77 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="id.co.dzaky.apsi_jek.User">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+            android:id="@+id/places_autocomplete"
+            android:layout_width="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:hint="Lokasi awal"
+            android:ellipsize="end"
+            app:pacv_languageCode="in"
+            app:pacv_googleMapsApiKey="@string/googlegeneralkey"
+            app:pacv_adapterClass="id.co.dzaky.apsi_jek.PlaceAdapter"/>
+
+        <com.seatgeek.placesautocomplete.PlacesAutocompleteTextView
+            android:id="@+id/places_autocomplete2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/places_autocomplete"
+            android:textSize="12sp"
+            android:hint="Lokasi tujuan"
+            android:ellipsize="end"
+            app:pacv_languageCode="in"
+            app:pacv_googleMapsApiKey="AIzaSyAHLMrwJeeB_lbB7LBF6hAVcWT6gC9hclY"
+            app:pacv_adapterClass="id.co.dzaky.apsi_jek.PlaceAdapter"/>
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/places_autocomplete2"
+            android:layout_above="@+id/button"
+            map:cameraZoom="13"
+            map:mapType="normal"
+            map:uiCompass="true"
+            map:uiRotateGestures="true"
+            map:uiScrollGestures="true"
+            map:uiZoomControls="true"
+            map:uiZoomGestures="true"/>
+
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView"
+            android:textSize="12sp"
+            android:layout_toLeftOf="@+id/button"
+            android:layout_toStartOf="@+id/button"
+            android:layout_alignTop="@+id/button" />
+
+        <Button
+            android:text="Pesan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            style="@style/Widget.AppCompat.Button.Colored" />
+    </RelativeLayout>
+
+</FrameLayout>
